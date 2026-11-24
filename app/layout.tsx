@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { WEBSITE_URL } from "@/lib/siteConfig";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,31 +14,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  icons: {
-    icon: "/favicon.png",
-  },
+  metadataBase: new URL(WEBSITE_URL),
   title: "LifeEase Concierge | Personal Concierge & Virtual Assistance for Employees",
-  description: "Professional personal concierge and virtual assistance services for employees. We handle life's tasks — doctor appointments, groceries, travel planning, errands, and more.",
+  description: "Employer-provided personal concierge for employees. Send everyday tasks by text or through the portal — appointments, errands, travel planning, home services and more.",
   openGraph: {
     title: "LifeEase Concierge | Personal Concierge & Virtual Assistance for Employees",
-    description: "Professional personal concierge and virtual assistance services for employees. We handle life's tasks so you can focus on what matters.",
-    url: "https://lifeeaseconcierge.com",
+    description: "Employer-provided personal concierge for employees. We handle life's everyday tasks so you can focus on what matters.",
+    url: WEBSITE_URL,
     siteName: "LifeEase Concierge",
-    images: [
-      {
-        url: "https://lifeeaseconcierge.com/ASC%20Verify%20Logo.png",
-        width: 500,
-        height: 167,
-        alt: "LifeEase Concierge",
-      },
-    ],
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "LifeEase Concierge | Personal Concierge & Virtual Assistance for Employees",
-    description: "Professional personal concierge and virtual assistance services for employees.",
-    images: ["https://lifeeaseconcierge.com/ASC%20Verify%20Logo.png"],
+    description: "Employer-provided personal concierge for employees.",
   },
 };
 
